@@ -4,6 +4,7 @@ import colorama
 import time
 import ctypes
 from os import system
+import sys
 
 colorama.init()
 dm = discord.Client()
@@ -17,19 +18,26 @@ def clear():
     else:
         os.system("clear")
 
-print(colorama.Fore.RED + '''
-████████▄    ▄▄▄▄███▄▄▄▄           ▄████████  ▄█        ▄█            
-███   ▀███ ▄██▀▀▀███▀▀▀██▄        ███    ███ ███       ███            
-███    ███ ███   ███   ███        ███    ███ ███       ███            
-███    ███ ███   ███   ███        ███    ███ ███       ███            
-███    ███ ███   ███   ███      ▀███████████ ███       ███            
-███    ███ ███   ███   ███        ███    ███ ███       ███            
-███   ▄███ ███   ███   ███        ███    ███ ███▌    ▄ ███▌    ▄      
-████████▀   ▀█   ███   █▀         ███    █▀  █████▄▄██ █████▄▄██      
-                                             ▀         ▀              
+words = (colorama.Fore.RED + '''
+▓█████▄  ███▄ ▄███▓    ▄▄▄       ██▓     ██▓    
+▒██▀ ██▌▓██▒▀█▀ ██▒   ▒████▄    ▓██▒    ▓██▒    
+░██   █▌▓██    ▓██░   ▒██  ▀█▄  ▒██░    ▒██░    
+░▓█▄   ▌▒██    ▒██    ░██▄▄▄▄██ ▒██░    ▒██░    
+░▒████▓ ▒██▒   ░██▒    ▓█   ▓██▒░██████▒░██████▒
+ ▒▒▓  ▒ ░ ▒░   ░  ░    ▒▒   ▓▒█░░ ▒░▓  ░░ ▒░▓  ░
+ ░ ▒  ▒ ░  ░      ░     ▒   ▒▒ ░░ ░ ▒  ░░ ░ ▒  ░
+ ░ ░  ░ ░      ░        ░   ▒     ░ ░     ░ ░   
+   ░           ░            ░  ░    ░  ░    ░  ░
+ ░                                              
   '''
 )
-token = input("token>>")
+
+for line in words:
+  time.sleep(0.000001)
+  sys.stdout.write(line)
+  sys.stdout.flush()
+
+token = input("Enter Your Token : ")
 message = input("le message que tu veux envoyer>>")
 
 @dm.event
