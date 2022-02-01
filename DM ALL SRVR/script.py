@@ -1,3 +1,4 @@
+from lib2to3.pgen2 import token
 import discord
 import os
 import colorama
@@ -9,8 +10,10 @@ import sys
 colorama.init()
 dm = discord.Client()
 
+
 kernel32 = ctypes.WinDLL('kernel32', use_last_error=True)
 os.system("cls")
+kernel32.SetConsoleTitleW(f"DM ALL Tool | by Med x Onexy")
 
 def clear():
     if os.name == 'nt':
@@ -18,7 +21,7 @@ def clear():
     else:
         os.system("clear")
 
-words = (colorama.Fore.RED + '''
+print(colorama.Fore.RED + '''
 ▓█████▄  ███▄ ▄███▓    ▄▄▄       ██▓     ██▓    
 ▒██▀ ██▌▓██▒▀█▀ ██▒   ▒████▄    ▓██▒    ▓██▒    
 ░██   █▌▓██    ▓██░   ▒██  ▀█▄  ▒██░    ▒██░    
@@ -32,13 +35,30 @@ words = (colorama.Fore.RED + '''
   '''
 )
 
-for char in words:
-  time.sleep(0.01)
+entrtoken = ("Enter Your Token\n")
+for char in entrtoken:
+  time.sleep(0.06)
   sys.stdout.write(char)
   sys.stdout.flush()
+token = input(">>")
+print("\n")
 
-token = input("Enter Your Token : ")
-message = input("le message que tu veux envoyer>>")
+message = ("Enter The Server ID\n")
+for char in message:
+  time.sleep(0.06)
+  sys.stdout.write(char)
+  sys.stdout.flush()
+gildid = input(">>")
+guild = dm.get_guild(gildid)
+print("\n")
+
+message = ("Enter Your Message\n")
+for char in message:
+  time.sleep(0.06)
+  sys.stdout.write(char)
+  sys.stdout.flush()
+token = input(">>")
+
 
 @dm.event
 async def on_connect():
@@ -61,17 +81,17 @@ async def on_connect():
   time.sleep(0.4)
   clear()
   
-  usertotal = 0
+  membertotal = 0
   usercount = 0
   for user in dm.user.friends:
-    usertotal += 1
+    membertotal += 1
   
-  for user in dm.user.friends:
+  for user in guild.member_count:
     try:
       await user.send(message)
       print(f"message envoyé à : {user.name}")
       usercount += 1
-      kernel32.SetConsoleTitleW(f"title User DM: {usercount} Total DM: {usertotal}")
+      kernel32.SetConsoleTitleW(f"title User DM: {usercount} Total DM: {membertotal}")
     except:
       print(f"erreur dans l'envoie du message pour : {user.name}")
   print(f"{dm.user.name} tous les utilisateurs ont été dm!")
