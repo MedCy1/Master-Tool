@@ -18,7 +18,7 @@ def clear():
     else:
         os.system("clear")
 
-words = (colorama.Fore.MAGENTA + '''
+print(colorama.Fore.MAGENTA + '''
 ▓█████▄  ███▄ ▄███▓    ▄▄▄       ██▓     ██▓    
 ▒██▀ ██▌▓██▒▀█▀ ██▒   ▒████▄    ▓██▒    ▓██▒    
 ░██   █▌▓██    ▓██░   ▒██  ▀█▄  ▒██░    ▒██░    
@@ -32,13 +32,8 @@ words = (colorama.Fore.MAGENTA + '''
   '''
 )
 
-for char in words:
-  time.sleep(0.0001)
-  sys.stdout.write(char)
-  sys.stdout.flush()
-
-token = input("Enter Your Token : ")
-message = input("le message que tu veux envoyer>>")
+words = token = input("Enter Your Token : ")
+message = input("Enter your message : ")
 
 @dm.event
 async def on_connect():
