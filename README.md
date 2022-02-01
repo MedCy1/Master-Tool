@@ -13,4 +13,8 @@
             0%
 
         TOKEN MANAGER [LONG]
+            -MASS PDP CHANGER [RANDOM]
+            -MASS STATUT / BIO CHANGER [RANDOM]
+            -MASS STATUT GAMES CHANGER [RANDOM]
+            -MASS HYPESQUAD CHANGER [RANDOM]
             
