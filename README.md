@@ -4,7 +4,7 @@
     Working about :
 
     |   DM SPAMMER [DM] [FAST]
-            90% Finish
+            100% Finish
 
         DM SPAMMER [SERVER] [FAST]
             0%

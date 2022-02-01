@@ -21,7 +21,7 @@ def clear():
     else:
         os.system("clear")
 
-print(colorama.Fore.RED + '''
+print(colorama.Fore.CYAN + '''
 ▓█████▄  ███▄ ▄███▓    ▄▄▄       ██▓     ██▓    
 ▒██▀ ██▌▓██▒▀█▀ ██▒   ▒████▄    ▓██▒    ▓██▒    
 ░██   █▌▓██    ▓██░   ▒██  ▀█▄  ▒██░    ▒██░    
@@ -51,7 +51,7 @@ message = input(">>")
 
 @dm.event
 async def on_connect():
-  print("Connecté en tant que :")
+  print("Connected at :")
   print(dm.user.name)
   print(dm.user.id)
   time.sleep(2)
@@ -78,11 +78,11 @@ async def on_connect():
   for user in dm.user.friends:
     try:
       await user.send(message)
-      print(f"message envoyé à : {user.name}")
+      print(f"\033[0;32m [+] Message Send To : {user.name}")
       usercount += 1
       kernel32.SetConsoleTitleW(f"title User DM: {usercount} Total DM: {usertotal}")
     except:
-      print(f"erreur dans l'envoie du message pour : {user.name}")
-  print(f"{dm.user.name} tous les utilisateurs ont été dm!")
+      print(f"\033[0;31m [+] error for sending message to : {user.name}")
+  print(f"\033[0;36m {dm.user.name} [+] All Users As Been DM successfully")
 
 dm.run(token, bot=False)
