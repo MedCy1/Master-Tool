@@ -1,3 +1,4 @@
+from email import message
 from lib2to3.pgen2 import token
 import discord
 import os
@@ -41,12 +42,12 @@ for char in entrtoken:
   sys.stdout.flush()
 token = input(">>")
 print("\n")
-message = ("Enter Your Message\n")
-for char in message:
+messageinput = ("Enter Your Message\n")
+for char in messageinput:
   time.sleep(0.06)
   sys.stdout.write(char)
   sys.stdout.flush()
-token = input(">>")
+message = input(">>")
 
 @dm.event
 async def on_connect():
