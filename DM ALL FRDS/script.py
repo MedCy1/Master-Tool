@@ -20,7 +20,15 @@ def clear():
     else:
         os.system("clear")
 
+<<<<<<< HEAD
 print(colorama.Fore.RED + '''
+=======
+<<<<<<< HEAD:script.py
+print(colorama.Fore.MAGENTA + '''
+=======
+words = (colorama.Fore.RED + '''
+>>>>>>> 0bb28f1f4aff2cfbab270d0b4b302d620df0333c:DM ALL FRDS/script.py
+>>>>>>> 9d3843b2846ef616d3e7b02d5e7e014e331ac2bd
 ▓█████▄  ███▄ ▄███▓    ▄▄▄       ██▓     ██▓    
 ▒██▀ ██▌▓██▒▀█▀ ██▒   ▒████▄    ▓██▒    ▓██▒    
 ░██   █▌▓██    ▓██░   ▒██  ▀█▄  ▒██░    ▒██░    
@@ -34,6 +42,7 @@ print(colorama.Fore.RED + '''
   '''
 )
 
+<<<<<<< HEAD
 entrtoken = ("Enter Your Token\n")
 for char in entrtoken:
   time.sleep(0.06)
@@ -47,6 +56,10 @@ for char in message:
   sys.stdout.write(char)
   sys.stdout.flush()
 token = input(">>")
+=======
+words = token = input("Enter Your Token : ")
+message = input("Enter your message : ")
+>>>>>>> 9d3843b2846ef616d3e7b02d5e7e014e331ac2bd
 
 @dm.event
 async def on_connect():
