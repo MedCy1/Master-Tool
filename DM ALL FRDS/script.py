@@ -18,7 +18,11 @@ def clear():
     else:
         os.system("clear")
 
+<<<<<<< HEAD:script.py
 print(colorama.Fore.MAGENTA + '''
+=======
+words = (colorama.Fore.RED + '''
+>>>>>>> 0bb28f1f4aff2cfbab270d0b4b302d620df0333c:DM ALL FRDS/script.py
 ▓█████▄  ███▄ ▄███▓    ▄▄▄       ██▓     ██▓    
 ▒██▀ ██▌▓██▒▀█▀ ██▒   ▒████▄    ▓██▒    ▓██▒    
 ░██   █▌▓██    ▓██░   ▒██  ▀█▄  ▒██░    ▒██░    
