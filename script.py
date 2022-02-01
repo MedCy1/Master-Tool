@@ -53,7 +53,11 @@ async def on_connect():
   time.sleep(0.4)
   clear()
   
+  usertotal = 0
   usercount = 0
+  for user in dm.user.friends:
+    usertotal += 1
+  
   for user in dm.user.friends:
     
     try:
@@ -61,7 +65,7 @@ async def on_connect():
       await user.send(message)
       print(f"message envoyé à : {user.name}")
       usercount += 1
-      kernel32.SetConsoleTitleW(f"title User DM: {usercount} Total DM: {user}")
+      kernel32.SetConsoleTitleW(f"title User DM: {usercount} Total DM: {usertotal}")
       time.sleep(3)
     except:
       print(f"erreur dans l'envoie du message pour : {user.name}")
