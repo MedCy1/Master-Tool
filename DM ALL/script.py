@@ -32,9 +32,9 @@ words = (colorama.Fore.RED + '''
   '''
 )
 
-for line in words:
-  time.sleep(0.000001)
-  sys.stdout.write(line)
+for char in words:
+  time.sleep(0.01)
+  sys.stdout.write(char)
   sys.stdout.flush()
 
 token = input("Enter Your Token : ")
