@@ -1,4 +1,3 @@
-from lib2to3.pgen2 import token
 import discord
 import os
 import colorama
@@ -12,7 +11,6 @@ dm = discord.Client()
 
 kernel32 = ctypes.WinDLL('kernel32', use_last_error=True)
 os.system("cls")
-kernel32.SetConsoleTitleW(f"DM ALL Tool | by Med x Onexy")
 
 def clear():
     if os.name == 'nt':
@@ -20,7 +18,7 @@ def clear():
     else:
         os.system("clear")
 
-print(colorama.Fore.RED + '''
+words = (colorama.Fore.RED + '''
 ▓█████▄  ███▄ ▄███▓    ▄▄▄       ██▓     ██▓    
 ▒██▀ ██▌▓██▒▀█▀ ██▒   ▒████▄    ▓██▒    ▓██▒    
 ░██   █▌▓██    ▓██░   ▒██  ▀█▄  ▒██░    ▒██░    
@@ -34,19 +32,13 @@ print(colorama.Fore.RED + '''
   '''
 )
 
-entrtoken = ("Enter Your Token\n")
-for char in entrtoken:
-  time.sleep(0.06)
+for char in words:
+  time.sleep(0.01)
   sys.stdout.write(char)
   sys.stdout.flush()
-token = input(">>")
-print("\n")
-message = ("Enter Your Message\n")
-for char in message:
-  time.sleep(0.06)
-  sys.stdout.write(char)
-  sys.stdout.flush()
-token = input(">>")
+
+token = input("Enter Your Token : ")
+message = input("le message que tu veux envoyer>>")
 
 @dm.event
 async def on_connect():
