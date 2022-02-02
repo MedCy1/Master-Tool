@@ -6,10 +6,10 @@ import time
 import ctypes
 from os import system
 import sys
+from discord.ext.commands import command
 
 colorama.init()
-dm = discord.Client()
-
+dm = discord.Client
 
 kernel32 = ctypes.WinDLL('kernel32', use_last_error=True)
 os.system("cls")
@@ -35,6 +35,7 @@ print(colorama.Fore.RED + '''
   '''
 )
 
+
 entrtoken = ("Enter Your Token\n")
 for char in entrtoken:
   time.sleep(0.06)
@@ -43,25 +44,27 @@ for char in entrtoken:
 token = input(">>")
 print("\n")
 
-message = ("Enter The Server ID\n")
-for char in message:
+serverid = ("Enter The Server ID\n")
+for char in serverid:
   time.sleep(0.06)
   sys.stdout.write(char)
   sys.stdout.flush()
-gildid = input(">>")
-guild = dm.get_guild(gildid)
+guild_id = input(">>")
+guild = dm.get_guild(guild_id)
 print("\n")
 
-message = ("Enter Your Message\n")
-for char in message:
+messageinput = ("Enter Your Message\n")
+for char in messageinput:
   time.sleep(0.06)
   sys.stdout.write(char)
   sys.stdout.flush()
-token = input(">>")
+message = input(">>")
+
+
 
 
 @dm.event
-async def on_connect():
+def on_connect(self, ctx):
   print("Connecté en tant que :")
   print(dm.user.name)
   print(dm.user.id)
@@ -80,20 +83,20 @@ async def on_connect():
   print("...")
   time.sleep(0.4)
   clear()
-  
+
   membertotal = 0
   usercount = 0
-  for user in dm.user.friends:
-    membertotal += 1
+  for member in ctx.guild.members:
+      membertotal += 1
   
-  for user in guild.member_count:
+  for user in ctx.guild.members:
     try:
-      await user.send(message)
+      user.send(message)
       print(f"message envoyé à : {user.name}")
       usercount += 1
       kernel32.SetConsoleTitleW(f"title User DM: {usercount} Total DM: {membertotal}")
     except:
       print(f"erreur dans l'envoie du message pour : {user.name}")
-  print(f"{dm.user.name} tous les utilisateurs ont été dm!")
+  print(f"{user.name} tous les utilisateurs ont été dm!")
 
 dm.run(token, bot=False)
