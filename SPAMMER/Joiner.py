@@ -9,5 +9,6 @@ f = open('tokens.txt', 'r')
 tokens = f.read()
 server_invite = input("Enter Invitation : ")
 
-for i in range(1, 10):
+for line in tokens:
     join(tokens, server_invite)
+tokens.close()
