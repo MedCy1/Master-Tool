@@ -1,7 +1,7 @@
 import discum, time 
-token = "OTI0NjAyNzUxODI3MTgxNTY5.Yf5UJw.aRptsdXI4ZWbU2XGFKM_c6D6VU4" #  Your account token
-guild_id = '113756088230215687' # The guild you wanna scrape id
-channel_id = '423469750123757568' # get the id of a channel that most people can see like #rules etc
+token = "NzU2NTk1NDgyNzYzMDY3NTkz.YgFW1A.4-80MdYyPi0hPaQTJve5NkKUhmY" #  Your account token
+guild_id = '740917422562869338' # The guild you wanna scrape id
+channel_id = '753265376707477557' # get the id of a channel that most people can see like #rules etc
 bot = discum.Client(token= token, log=True)
 
 
