@@ -12,11 +12,11 @@ with open("id.txt") as infile:
     for line in infile:
         id = int(line)
         try:
-            time.sleep(10)
+            time.sleep(20)
             bot.requestFriend(f'{id}')
-            time.sleep(10)
+            time.sleep(20)
             newDM = bot.createDM([f"{id}"]).json()["id"]
-            bot.sendMessage(newDM, """Hello,\nexcuse me for disturbing you.\nBut, I'm the founder of a modded mc server called "Last Dream", it's an MMORPG with an animation oriented on minecraft but a gameplay oriented on genshin impact.\nWe are in beta phase and are actively looking for beta testers.\nI would like to know if you would be interested in joining our team as a beta tester?\nKnowing that our beta testers are paid about 40€ / week\nthe remuneration varies according to the bugs you will find, and especially according to the impact of the bugs encountered\nor elements that according to him would allow to improve the experience of a player or to improve the gameplay\nThe website:\nhttps://lastdream.fun/#download \nThe discord:\nhttps://discord.gg/lastdream""")
+            bot.sendMessage(newDM, """Bonsoir,\nExcusez-moi de vous déranger.\nMais, je suis la fondatrice d'un serveur mc moddé qui se nomme « Last Dream », c'est un MMORPG avec une animation orienté sur du minecraft mais un gameplay tourné vers du genshin impact.\nNous sommes en phase béta et cherchons activement des béta testeur.\nJ'aimerais savoir si tu serais intéressé pour rejoindre notre équipe en tant que béta testeur ?\nEn sachant que nos bétas tester sont rémunérés d'environ 40€ / semaine\nla rémunération varie en fonction des bugs que tu trouveras, et surtout en fonction de l'impact des bugs rencontrer\nou encore des éléments qui selon lui permettrais d'améliorer l'expérience d'un joueur ou d'améliorer le gameplay\nLe site:\nhttps://lastdream.fun/#download\nLe Discord:\nhttps://discord.gg/lastdream""")
             timer += 1
             if timer == 5:
                 time.sleep(60)
