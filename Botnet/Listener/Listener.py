@@ -4,7 +4,7 @@ import _thread
 import time
 
 
-CLIENT_TIMEOUT = 30 # seconds
+CLIENT_TIMEOUT = 5 # seconds
 MAXIMUM_CLIENTS = 100 #seconds
 
 #Common parts
