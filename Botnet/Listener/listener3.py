@@ -1,4 +1,8 @@
 from socket import *
+import _thread
+import queue
+
+SEND_FILE_BUFFER = 5120 #5kb
 HOST = '127.0.0.1'
 PORT = 8080
 BUFSIZ = 1024
@@ -17,3 +21,16 @@ while 1:
         clientsock.send(data.encode())
         clientsock.close()
     clientsock.close()
+
+##########  ACTIONS  ##########
+
+def SendFile(self, path):
+    f = open(path, 'r')
+    while f:
+        data = f.read(SEND_FILE_BUFFER)
+        self.sock.send(data)
+    f.close    
+
+if __name__ == "__main__":
+    in_ = queue.Queue()
+    out_ = queue.Queue()
